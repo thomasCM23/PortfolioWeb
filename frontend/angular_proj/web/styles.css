@@ -1,0 +1,38 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Material+Icons);
+
+:root {
+  --primary-color: #004d40;
+  --primary-color-light: #39796b;
+  --primary-color-dark: #00251a;
+  --secondary-color: #f57f17;
+  --secondary-color-light: #ffb04c;
+  --secondary-color-dark: #bc5100;
+  --bg-color-main: #212121;
+  --bg-color-light: #484848;
+  --bg-color-dark: #000000;
+  --text-color-primary: #ffffff;
+  --text-color-secondary: #000000;
+}
+
+body {
+  background-color: var(--bg-color-main);
+  color: var(--text-color-primary);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.shadow {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+* {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+.secondary-color{
+  background-color: var(--secondary-color) !important;
+  color: var(--text-color-secondary) !important;
+}

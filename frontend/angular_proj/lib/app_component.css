@@ -1,0 +1,9 @@
+:host {
+    /* This is equivalent of the 'body' selector of a page. */
+}
+
+.main {
+    max-width: 75%;
+    margin: 0 auto;
+    padding: 5vw;
+}

@@ -1,0 +1,102 @@
+.card-title-color {
+  height: 70px;
+  background-color: var(--secondary-color-dark);
+}
+
+.card-title-color-light {
+  height: 70px;
+  background-color: var(--secondary-color-light);
+}
+
+.card-title-color-norm {
+  height: 70px;
+  background-color: var(--secondary-color);
+}
+
+.mdc-card__media h2 {
+  padding: 10px;
+}
+
+.card-text {
+  padding: 15px;
+}
+
+.card-bg {
+  background-color: transparent !important;
+}
+
+#intro {
+  width: 55%;
+  float: left;
+}
+
+#imageMe {
+  width: 40%;
+  float: right;
+}
+
+#timeline {
+  float: right;
+  margin-top: 50px;
+  width: 100%;
+  height: 950px;
+  margin-bottom: 100px;
+}
+
+#skill {
+  float: right;
+  margin-top: 50px;
+}
+
+.demo-card__media {
+  background-image: url('http://material-components-web.appspot.com/images/16-9.jpg');
+  height: 500px;
+}
+
+#timeline-image {
+  background-image: url('images/timeline.png');
+  height: 900px;
+  width: 220px;
+  position: absolute;
+  left: 45%;
+}
+
+.timeline-card {
+  width: 40.8%;
+  position: relative;
+  height: 240px;
+}
+
+:root{
+  --left-amount:30px;
+  --right-amount: (-60.2%);
+}
+
+#cegep{
+  left: var(--left-amount);
+  top:-15px;
+}
+#uni{
+  left: var(--left-amount);
+  top:50px;
+}
+#sunlife{
+  right: -60.2%;
+  top:-450px;
+}
+#icm{
+  right: -60.2%;
+  top:-430px;
+}
+#advantys{
+  right: -60.2%;
+  top:-410px
+}
+#momentum{
+  left: var(--left-amount);
+  top: -600px;
+}
+#mldl{
+  right: -60.2%;
+  top: -630px;
+}
