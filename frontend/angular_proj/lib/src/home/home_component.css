@@ -44,8 +44,21 @@
 }
 
 #skill {
-  float: right;
+  float: left;
   margin-top: 50px;
+  width: 100%;
+}
+
+#ml_certificate {
+  float: left;
+  margin-top: 50px;
+  width: 100%;
+}
+
+#dl_certificate {
+  float: left;
+  margin-top: 50px;
+  width: 100%;
 }
 
 .demo-card__media {
@@ -65,38 +78,72 @@
   width: 40.8%;
   position: relative;
   height: 240px;
+  font-size: 12px;
 }
 
-:root{
-  --left-amount:30px;
+:root {
+  --left-amount: 30px;
   --right-amount: (-60.2%);
 }
 
-#cegep{
+#cegep {
   left: var(--left-amount);
-  top:-15px;
+  top: -10px;
+  height: 140px;
 }
-#uni{
+
+#uni {
   left: var(--left-amount);
-  top:50px;
+  top: 200px;
+  height: 170px;
 }
-#sunlife{
+
+#sunlife {
   right: -60.2%;
-  top:-450px;
+  top: -270px;
+  height: 220px;
 }
-#icm{
+
+#icm {
   right: -60.2%;
-  top:-430px;
+  top: -250px;
+  height: 250px;
 }
-#advantys{
+
+#advantys {
   right: -60.2%;
-  top:-410px
+  top: -240px;
+  height: 250px;
 }
-#momentum{
+
+#momentum {
   left: var(--left-amount);
-  top: -600px;
+  top: -350px;
+  height: 280px;
 }
-#mldl{
+
+#mldl {
   right: -60.2%;
-  top: -630px;
+  top: -500px;
+  height: 210px;
+}
+
+.skill_icon {
+  float: left;
+  margin-right: 15px;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+
+  padding: 15px;
+
+  border-radius: 20px;
+}
+
+.skill-area {
+  width: 100%;
+  float: left;
+}
+
+.skill-label {
+  position: relative;
+  bottom: 40%;
 }

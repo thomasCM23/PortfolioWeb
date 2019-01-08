@@ -1,11 +1,13 @@
-<header class="head shadow">
-    <div class="left">
-        <h1>Thomas CM</h1>
-    </div>
-    <div class="right">
-        <nav>
-            
+<header class="material-header shadow head">
+    <div class="material-header-row">
+        <img src="https://img.icons8.com/color/48/000000/source-code.png">
+        <span class="material-header-title">Thomas CM</span>
+        <div class="material-spacer"></div>
+        <nav class="material-navigation">
+                <a [routerLink]="RoutePaths.home.toUrl()" [routerLinkActive]="'active'">Home</a>
+        </nav>
+        <nav class="material-navigation">
+                <a [routerLink]="RoutePaths.projects.toUrl()" [routerLinkActive]="'active'">Projects</a>
         </nav>
     </div>
-
 </header>
