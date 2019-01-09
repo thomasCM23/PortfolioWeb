@@ -1,0 +1,40 @@
+section {
+    color: var(--text-color-secondary);
+    margin-bottom: 20px;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px
+}
+
+.demo-size {
+    width: 100%;
+}
+
+.demo-card__primary {
+    padding: 0 10px 0 10px;
+}
+
+.demo-card__secondary {
+    padding: 0 10px 0 10px;
+}
+
+.demo-card__title {
+    line-height: 1em;
+    margin: 10px 0 0 0;
+}
+
+.demo-card__subtitle {
+    margin: 0 0 10px 0;
+}
+
+.card-button {
+    background: var(--secondary-color);
+    color: var(--text-color-secondary);
+  }
+.card-button material-ripple {
+    color: var(--secondary-color-light);
+}
