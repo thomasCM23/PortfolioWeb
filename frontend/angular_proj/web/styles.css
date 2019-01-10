@@ -36,3 +36,9 @@ body {
   background-color: var(--secondary-color) !important;
   color: var(--text-color-secondary) !important;
 }
+.center-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

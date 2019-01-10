@@ -1,0 +1,72 @@
+<h4>Neural Style Transfer</h4>
+
+<div class="grid-container fluid">
+    <div class="grid-x grid-margin-x">
+        <div class="cell medium-6 large-6">
+            <h5>What is it?</h5>
+            <p>Neural style transfer is an optimization method, where the neural network is not trained to do anything.
+                Rather we used a pretrained convolutional neural network to minimize two new loss functions, using
+                three images: a content image which represents the image you are trying to stylize, a style image which
+                represents
+                the style you are trying to achieve, and the input image which is a tensor the shape of the content
+                image that is
+                initialized to be random noise.</p>
+            <p>The three images go through layers of the pretrained network where we use the outputs of intermediate
+                layers to calculate the aforementioned loss functions, one which computes how close the input image's
+                style is
+                compared to that of the style image and an other which computes how close the input image's content is
+                to the
+                conent image. The loses are then used to modify the input image, this process is repeated for a few
+                iterations, and
+                hopefully by the end the input image is stylized version of the content image.</p>
+            <p>
+                The use of a pretrained network is so the network understands what is in the content image. A network
+                trained on image classifications knows how to create internal representations of the content image, by
+                taking the
+                outputs of layers near the end of the network, the values will be very close the the actual content
+                image. Then we
+                use Euclidean distance between the representation and the input image tensor, to get the content loss.
+            </p>
+            <p>
+                The process is very similar for the style loss, expect we use a Gram matrix instead. To create a Gram
+                matrix, we multiply a matrix with it's transpose, the reason this is done is because a Gram matrix
+                contain non-localized
+                information of the multipled matrix, in the case of images this information is the texture, shapes and
+                weights. Having the
+                Gram matrix of intermediate representations of the style image and the Gram matrix of the input image,
+                we find the
+                Euclidean distance between them, the result is the style loss.
+
+            </p>
+        </div>
+        <div class="cell medium-6 large-6">
+            <div class="mdc-card card-bg">
+                <bs-carousel [interval]="myIntervalInMs" [noWrap]="noWrapSlides">
+                    <bs-slide *ngFor="let slide of slides; let index=index" [index]="index" [active]="slide['active'] != null ? slide['active'] : false "
+                        class="bg-slide-color">
+                        <img [src]="slide['image']">
+                    </bs-slide>
+                </bs-carousel>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid-container fluid">
+    <div class="grid-x grid-margin-x">
+        <div class="cell medium-6 large-6">
+            <img src="images/neuraltrans.png" class="timeline-image">
+        </div>
+        <div class="cell medium-6 large-6">
+            <h5>How was it done?</h5>
+            <p>
+                To complete this small project, I followed a tutorial on tensorflow website on neural style transfer
+                and read the paper A Neural Algorithm of Artistic Style[Leon A. Gatys, Alexander S. Ecker, Matthias
+                Bethge]. The goal with this was to get to know more about tensorflow and keras, as well as, the VGG19
+                convolutional neural net, which is pretrained on ImageNet. After having written the code, I tested
+                various content images and style images, applying different weight to see the result, some of which are
+                quite satisfying. The weights are a way of telling the network how much of the content or style you
+                want in the input image.
+            </p>
+        </div>
+    </div>
+</div>

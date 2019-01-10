@@ -6,7 +6,7 @@ import 'package:http/http.dart';
 import 'project.dart';
 
 class ProjectSpecialService {
-  static const _heroesUrl = 'api/projects'; // URL to web API
+  static const _projectSpecialURL = 'api/projects'; // URL to web API
 
   final Client _http;
 
@@ -14,7 +14,7 @@ class ProjectSpecialService {
 
   Future<List<Project>> getAll() async {
     try {
-      final response = await _http.get(_heroesUrl);
+      final response = await _http.get(_projectSpecialURL);
       final heroes = (_extractData(response) as List)
           .map((json) => Project.fromJson(json))
           .toList();
