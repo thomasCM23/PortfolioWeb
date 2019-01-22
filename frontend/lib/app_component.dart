@@ -25,4 +25,5 @@ import 'src/project_list/project_list_component.dart';
 )
 class AppComponent {
   // Nothing here yet. All logic is in TodoListComponent.
+  
 }

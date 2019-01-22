@@ -1,0 +1,49 @@
+{
+  "ml_projects": [
+    {
+      "title": "Dense Neural Net",
+      "description": "Simple implementation of a Neural Network framework. Only meant for me to reinforce some of the knowledge I have gained about Neural Networks.",
+      "url": "#/densenet",
+      "imagePath": "neural-network.png",
+      "tech": "Python, Numpy"
+    },
+    {
+      "title": "Human Protein Image Classification",
+      "description": "Develop models capable of classifying mixed patterns of proteins in microscope images",
+      "url": "#/proteinclass",
+      "imagePath": "ProjectDiscoveryProtein.jpg",
+      "tech": "Python, Tensorflow"
+    },
+    {
+      "title": "Neural Style Transfer",
+      "description": "Transform the content images to the style of another image, using convolutional neural nets.",
+      "url": "#/neuralstyle",
+      "imagePath": "card_neuraltransfer.png",
+      "tech": "Python, Tensorflow, Keras"
+    },
+    {
+      "title": "Text Generation",
+      "description": "Generate text using character based RNN.",
+      "url": "#/textgen",
+      "imagePath": "flutter.png",
+      "tech": "Python, Tensorflow"
+    },
+    {
+      "title": "Eng to Fre ML App (Future)",
+      "description": "Using deep recurrent neural network for machine transalation from engilish to french.",
+      "url": "#/translationapp",
+      "imagePath": "flutter.png",
+      "tech": "Python, Tensorflow, Flutter"
+    },
+    {
+      "title": "Quick Notes (Future)",
+      "description": "Application to take photes of notes and render them into digital, searchable e-notebooks.",
+      "url": "#/quicknotes",
+      "imagePath": "flutter.png",
+      "tech": "Python, Tensorflow, Flutter, Go"
+    }
+  ],
+  "git_projects": [
+
+  ]
+}

@@ -6,7 +6,7 @@ import 'package:http/http.dart';
 import 'project.dart';
 
 class ProjectSpecialService {
-  static const _projectSpecialURL = 'api/projects'; // URL to web API
+  static const _projectSpecialURL = 'http://localhost:5000' + '/projects/ml_projects'; // URL to web API
 
   final Client _http;
 
@@ -15,6 +15,7 @@ class ProjectSpecialService {
   Future<List<Project>> getAll() async {
     try {
       final response = await _http.get(_projectSpecialURL);
+      print(response.body);
       final heroes = (_extractData(response) as List)
           .map((json) => Project.fromJson(json))
           .toList();
@@ -24,7 +25,7 @@ class ProjectSpecialService {
     }
   }
 
-  dynamic _extractData(Response resp) => json.decode(resp.body)['data'];
+  dynamic _extractData(Response resp) => json.decode(resp.body);
 
   Exception _handleError(dynamic e) {
     print(e); // for demo purposes only
