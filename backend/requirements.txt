@@ -1,3 +1,5 @@
 flask
+gunicorn
 flask_restful
 tensorflow
+google-api-python-client

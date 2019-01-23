@@ -1,0 +1,2 @@
+model_checkpoint_path: "chpt_50"
+all_model_checkpoint_paths: "chpt_50"
