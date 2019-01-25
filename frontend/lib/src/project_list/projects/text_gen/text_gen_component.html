@@ -1,0 +1,22 @@
+<h4>Text Generation</h4>
+
+
+<div *ngIf="form != null">
+    <material-input floatingLabel type="text" label="Enter A Starting Word Or Sentence" [(ngModel)]="form.word"></material-input>
+    <br>
+    <material-input floatingLabel label="Length Of Generated Text" type="number" [(ngModel)]="form.length"></material-input>
+    <br>
+    <material-input floatingLabel label="Temperature" type="number" [(ngModel)]="form.temperature">
+        <material-icon trailing tooltipTarget size="medium" icon="help_outline" #tooltipRef="tooltipTarget">
+        </material-icon>
+    </material-input>
+    <material-tooltip-card [for]="tooltipRef">
+        Low temperatures results in more predictable text. 
+    </material-tooltip-card>
+    <br>
+    <material-button class="card-button" (click)="generate()">Generate!</material-button>
+    <br>
+    <p>
+        {{form.generatedText}}
+    </p>
+</div>

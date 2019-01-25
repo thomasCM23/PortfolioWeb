@@ -2,6 +2,7 @@ from flask import Flask
 from flask_restful import Resource, Api, reqparse, abort
 import json
 import uuid
+import re
 from text_generation.inference import TextGeneration
 from translation.nmt import NeuralMachineTranslation
 
@@ -10,6 +11,9 @@ api = Api(app)
 
 parser = reqparse.RequestParser()
 parser.add_argument('original_text')
+parser.add_argument('word')
+parser.add_argument('length')
+parser.add_argument('temperature')
 
 class HelloWorld(Resource):
     def get(self):
@@ -24,18 +28,20 @@ class ProjectList(Resource):
         return db_data[proj_type]
 
 class GenerateText(Resource):
-    def get(self):
-        gen = TextGeneration("Hello", 100, 1)
+    def post(self):
+        args = parser.parse_args()
+        gen = TextGeneration(args['word'], int(args['length']), int(args['temperature']))
         return {'text': gen.generate_text()}
 
 class Translate(Resource):
-    def get(self):
+    def post(self):
         args = parser.parse_args()
-        print(args)
-        test_txt = args['original_text']
+        txt_to_translate = re.sub('([.,!?();:"])', r' \1 ', args['original_text'])
+        txt_to_translate = re.sub('\s{2,}', ' ', txt_to_translate)
         nmt = NeuralMachineTranslation()
-        translated_txt = nmt.start_inference_nmt(test_txt, str(uuid.uuid4()) + '.txt')
-        return {'text': translated_txt}
+        translated_txt = nmt.start_inference_nmt(txt_to_translate, str(uuid.uuid4()) + '.txt')
+        translated_txt = re.sub(r'\s([.,!?();:"](?:\s|$))', r'\1', translated_txt)
+        return {'text': translated_txt.replace("&apos;", "'")}
 
 
 api.add_resource(HelloWorld, '/')

@@ -57,6 +57,11 @@ class Routes {
     home,
     projects,
     neuralStyle,
+    denseNet,
+    proteinClass,
+    quickNotes,
+    textGen,
+    translationApp,
     RouteDefinition.redirect(
       path: '',
       redirectTo: RoutePaths.home.toUrl(),
