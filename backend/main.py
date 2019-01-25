@@ -1,11 +1,15 @@
 from flask import Flask
-from flask_restful import Resource, Api
+from flask_restful import Resource, Api, reqparse, abort
 import json
+import uuid
 from text_generation.inference import TextGeneration
+from translation.nmt import NeuralMachineTranslation
 
 app = Flask(__name__)
 api = Api(app)
 
+parser = reqparse.RequestParser()
+parser.add_argument('original_text')
 
 class HelloWorld(Resource):
     def get(self):
@@ -24,10 +28,20 @@ class GenerateText(Resource):
         gen = TextGeneration("Hello", 100, 1)
         return {'text': gen.generate_text()}
 
+class Translate(Resource):
+    def get(self):
+        args = parser.parse_args()
+        print(args)
+        test_txt = args['original_text']
+        nmt = NeuralMachineTranslation()
+        translated_txt = nmt.start_inference_nmt(test_txt, str(uuid.uuid4()) + '.txt')
+        return {'text': translated_txt}
+
 
 api.add_resource(HelloWorld, '/')
 api.add_resource(ProjectList, '/projects/<string:proj_type>')
 api.add_resource(GenerateText, '/generate-text')
+api.add_resource(Translate, '/translate-text')
 
 @app.after_request
 def add_headers(response):
