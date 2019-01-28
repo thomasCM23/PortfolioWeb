@@ -3,14 +3,14 @@
     {
       "title": "Dense Neural Net",
       "description": "Simple implementation of a Neural Network framework. Only meant for me to reinforce some of the knowledge I have gained about Neural Networks.",
-      "url": "#/densenet",
+      "url": "https://github.com/thomasCM23/DenseNeuralNet",
       "imagePath": "neural-network.png",
       "tech": "Python, Numpy"
     },
     {
       "title": "Human Protein Image Classification",
       "description": "Develop models capable of classifying mixed patterns of proteins in microscope images",
-      "url": "#/proteinclass",
+      "url": "https://github.com/thomasCM23/Human-Protein-Atlas-Image-Classification",
       "imagePath": "ProjectDiscoveryProtein.jpg",
       "tech": "Python, Tensorflow"
     },
@@ -25,7 +25,7 @@
       "title": "Text Generation",
       "description": "Generate text using character based RNN.",
       "url": "#/textgen",
-      "imagePath": "flutter.png",
+      "imagePath": "shakespeare.jpg",
       "tech": "Python, Tensorflow"
     },
     {
@@ -44,6 +44,61 @@
     }
   ],
   "git_projects": [
-
+    {
+      "title": "Web Portfolio",
+      "description": "This website, both frontend and backend.",
+      "url": "https://github.com/thomasCM23/PortfolioWeb",
+      "imagePath": "web.png",
+      "tech": "Python(flask), Dart(AngularDart), HTML, CSS"
+    },
+    {
+      "title": "Flappy Plane",
+      "description": "A Flappy Bird clone for mobile and web.",
+      "url": "https://gitlab.com/ThomasCM/flappy-plane",
+      "imagePath": "FlappyPlaneIcon.png",
+      "tech": "Unity 3D, C#"
+    },
+    {
+      "title": "Kaggle House Price",
+      "description": "This is a perfect competition for data science students who have completed an online course in machine learning and are looking to expand their skill set before trying a featured competition.",
+      "url": "https://github.com/thomasCM23/KaggleHousePrices",
+      "imagePath": "houseprice.png",
+      "tech": "Python, Pandas, Nunpy, Matplotlib, Seaborn, Scikit-Learn"
+    },
+    {
+      "title": "Coursea Machine Learning Course",
+      "description": "Learn about the most effective machine learning techniques, and gain practice implementing them.",
+      "url": "https://github.com/thomasCM23/coursea-machine-learning",
+      "imagePath": "code.jpeg",
+      "tech": "Python(flask), Dart(AngularDart), HTML, CSS"
+    },
+    {
+      "title": "Trip Builder",
+      "description": "This was a coding test from Momentum Ventures, it is a simple site where users can search for airports and flights and add trips to there catalog.",
+      "url": "https://github.com/thomasCM23/TripBuilder",
+      "imagePath": "web.png",
+      "tech": "PHP(Laravel), HTML, CSS, MySQL, AWS(Elastic BeanStalk, RDS)"
+    },
+    {
+      "title": "Udemy Glitch Garden",
+      "description": "Plant vs zombies clone",
+      "url": "https://github.com/thomasCM23/udemy-glitch-garden",
+      "imagePath": "Glitch.jpg",
+      "tech": "Unity 3D, C#"
+    },
+    {
+      "title": "Risk Game",
+      "description": "Term Project for COMP 345 - Advanced Program Design with C++.",
+      "url": "https://github.com/thomasCM23/RiskGame",
+      "imagePath": "code.jpeg",
+      "tech": "C++"
+    },
+    {
+      "title": "Tank Rush",
+      "description": "A 2.5D game where the player must pass through a barrage of enemy fire.",
+      "url": "https://github.com/thomasCM23/tank-rush",
+      "imagePath": "tankrush.png",
+      "tech": "Unity 3D, C#"
+    }
   ]
 }

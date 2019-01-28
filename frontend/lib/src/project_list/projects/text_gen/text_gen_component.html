@@ -1,22 +1,111 @@
 <h4>Text Generation</h4>
+<a href="https://www.tensorflow.org/tutorials/sequences/text_generation">
+    <h6>Following This Tutorial</h6>
+</a>
 
-
-<div *ngIf="form != null">
-    <material-input floatingLabel type="text" label="Enter A Starting Word Or Sentence" [(ngModel)]="form.word"></material-input>
-    <br>
-    <material-input floatingLabel label="Length Of Generated Text" type="number" [(ngModel)]="form.length"></material-input>
-    <br>
-    <material-input floatingLabel label="Temperature" type="number" [(ngModel)]="form.temperature">
-        <material-icon trailing tooltipTarget size="medium" icon="help_outline" #tooltipRef="tooltipTarget">
-        </material-icon>
-    </material-input>
-    <material-tooltip-card [for]="tooltipRef">
-        Low temperatures results in more predictable text. 
-    </material-tooltip-card>
-    <br>
-    <material-button class="card-button" (click)="generate()">Generate!</material-button>
+<div>
+    <p>
+        In the aforementioned tutorial recurrent neural networks are used for text generation, using a vocabulary
+        containing the english alphabet, numeric characters 0-9, and common punctuation.
+        The tutorial follows Andrej Karpathy's <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">The
+            Unreasonable Effectiveness of Recurrent Neural Networks</a>, which goes into
+        details on how to use RNNs for text generation and how effective they are at sequence processing tasks.
+    </p>
     <br>
     <p>
-        {{form.generatedText}}
+        Using tensorflow, keras, and the tutorial, I was able to create checkpoints, which I later use for inference
+        via an API which you can try below. I trained the network on the same data set as mentioned in the tutorial,
+        but modified the network architecture and the amount of time trained.
     </p>
+    <br>
+    <p>
+        <table>
+            <tr>
+                <th>Layer (type)</th>
+                <th>Output Shape</th>
+                <th>Param #</th>
+            </tr>
+            <tr>
+                <td>embedding (Embedding)</td>
+                <td>(64, None, 515)</td>
+                <td>33475</td>
+            </tr>
+            <tr>
+                <td>gru (GRU)</td>
+                <td>(64, None, 515)</td>
+                <td>1592895</td>
+            </tr>
+            <tr>
+                <td>dropout (Dropout)</td>
+                <td>(64, None, 515)</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>gru_1 (GRU)</td>
+                <td>(64, None, 515)</td>
+                <td>1592895</td>
+            </tr>
+            <tr>
+                <td>dropout (Dropout)</td>
+                <td>(64, None, 515)</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>gru_2 (GRU)</td>
+                <td>(64, None, 515)</td>
+                <td>1592895</td>
+            </tr>
+            <tr>
+                <td>dropout (Dropout)</td>
+                <td>(64, None, 515)</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>gru_3 (GRU)</td>
+                <td>(64, None, 515)</td>
+                <td>1592895</td>
+            </tr>
+            <tr>
+                <td>dropout (Dropout)</td>
+                <td>(64, None, 515)</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>dense (Dense)</td>
+                <td>(64, None, 65)</td>
+                <td>33540</td>
+            </tr>
+
+        </table>
+    </p>
+    <br>
+</div>
+<div class="mdc-card demo-size" style="padding:2%">
+    <div class="demo-card__primary">
+        <h2 class="demo-card__title" style="color: #000">Example</h2>
+    </div>
+    <div class="demo-card__secondary">
+        <div class="grid-container fluid">
+            <div class="grid-x grid-margin-x">
+                <div class="cell medium-4 large-4">
+                    <label>Enter A Starting Word Or Sentence</label>
+                    <input type="text" [(ngModel)]="form.word" style="width: 80%">
+                </div>
+                <div class="cell medium-4 large-4">
+                    <label>Length Of Generated Text</label>
+                    <input type="number" [(ngModel)]="form.length" style="width: 80%">
+                </div>
+                <div class="cell medium-4 large-4">
+                    <label>Temperature</label>
+                    <input type="number" [(ngModel)]="form.temperature" style="width: 80%">
+                </div>
+            </div>
+            <br>
+            <material-button class="card-button" (click)="generate()">Generate!</material-button>
+            <hr>
+            <p style="color: #000;white-space: pre-line">
+                {{form.generatedText}}
+            </p>
+        </div>
+    </div>
 </div>

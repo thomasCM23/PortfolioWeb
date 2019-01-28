@@ -5,6 +5,7 @@ import 'package:http/http.dart';
 
 import 'project.dart';
 import 'projects/text_gen/text_gen_component.dart';
+import 'projects/translation_app/translation_app_component.dart';
 
 class ProjectSpecialService {
   static const _mainURL = 'http://localhost:5000'; // URL to web API
@@ -19,7 +20,6 @@ class ProjectSpecialService {
   Future<List<Project>> getAll() async {
     try {
       final response = await _http.get(_projectSpecialURL);
-      print(response.body);
       final heroes = (_extractData(response) as List)
           .map((json) => Project.fromJson(json))
           .toList();
@@ -39,16 +39,15 @@ class ProjectSpecialService {
   Future<String> generateText(GenerateForm form) async{
     try{
       final response = await _http.post(_generateURL, headers: _headers, body: json.encode(form));
-      print(_extractData(response)['text']);
       return _extractData(response)['text'];
     } catch(e){
       throw _handleError(e);
     }
   }
-  Future<String> translateText() async{
+  Future<String> translateText(TranslateForm form) async{
     try{
-      final response = await _http.get(_translateURL);
-      print(response);
+      final response = await _http.post(_translateURL, headers: _headers, body: json.encode(form));
+      return _extractData(response)['text'];
     } catch(e){
       throw _handleError(e);
     }

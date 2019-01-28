@@ -31,20 +31,20 @@
 <h4>Other Projects</h4>
 <div class="grid-container fluid">
     <div class="grid-x grid-margin-x">
-        <div class="cell medium-4 large-4" *ngFor="let project of projectsGit">
+        <div class="cell medium-3 large-3" *ngFor="let project of projectsGit">
             <section>
                 <div class="mdc-card demo-size">
                     <div class="mdc-card__media">
-                        <img src="images/{{project.imagePath}}" class="card-image">
+                        <img src="images/{{project.imagePath}}" class="card-image-2">
                     </div>
-                    <div class="demo-card__primary height-title">
+                    <div class="demo-card__primary height-title-2">
                         <h4 class="demo-card__title">{{project.title}}</h4>
                         <h6 class="demo-card__subtitle">{{project.tech}}</h6>
                     </div>
-                    <div class="demo-card__secondary height-descrip">
+                    <div class="demo-card__secondary height-descrip-2">
                         {{project.description}}
                     </div>
-                    <div class="mdc-card__actions bottom-card-pos height-link">
+                    <div class="mdc-card__actions bottom-card-pos height-link-2">
                         <div class="mdc-card__action-buttons">
                             <a href="{{project.url}}">
                                 <material-button class="card-button" ng-click="ctrl.redirect()">CHECK OUT</material-button>

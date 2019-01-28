@@ -1,0 +1,8 @@
+.card-button {
+    background: var(--secondary-color);
+    color: var(--text-color-primary);
+  }
+  .card-button material-ripple {
+    background: var(--secondary-color-light);
+    color: var(--text-color-secondary);
+  }

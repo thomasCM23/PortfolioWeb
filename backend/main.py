@@ -36,8 +36,10 @@ class GenerateText(Resource):
 class Translate(Resource):
     def post(self):
         args = parser.parse_args()
+        print(args)
         txt_to_translate = re.sub('([.,!?();:"])', r' \1 ', args['original_text'])
         txt_to_translate = re.sub('\s{2,}', ' ', txt_to_translate)
+        print(txt_to_translate)
         nmt = NeuralMachineTranslation()
         translated_txt = nmt.start_inference_nmt(txt_to_translate, str(uuid.uuid4()) + '.txt')
         translated_txt = re.sub(r'\s([.,!?();:"](?:\s|$))', r'\1', translated_txt)
