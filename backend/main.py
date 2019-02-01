@@ -44,11 +44,10 @@ class Translate(Resource):
         print(txt_to_translate)
         nmt = NeuralMachineTranslation()
         try:
-            raise Exception
             translated_txt = nmt.start_inference_nmt(txt_to_translate, str(uuid.uuid4()) + '.txt', args['langauge'])
             translated_txt = re.sub(r'\s([.,!?();:"](?:\s|$))', r'\1', translated_txt)
         except Exception as e:
-            translated_txt = "The language " + args['langauge'] + " has not yet been implemented" + " ERROR: " + str(e) + "  = " + str(os.path.exists('checkpoint/translation/en_fr_attention')) + '   *** ' + args['langauge']
+            translated_txt = "The language " + args['langauge'] + " has not yet been implemented"
 
         return {'text': translated_txt.replace("&apos;", "'")}
 
