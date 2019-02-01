@@ -3,4 +3,3 @@ backend/\.idea/
 backend/checkpoint/*
 backend/inference/*
 backend/models/*
-backend/nmt/*
