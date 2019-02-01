@@ -45,7 +45,7 @@ class NetworkConfig:
         self.test_prefix = ""  # "nmt/wmt15/newstest2015.tok.bpe.32000"
         self.out_dir = checkpointdir
         # vocab
-        self.vocab_prefix = "data/vocab.bpe.32000"
+        self.vocab_prefix = "nmt/wmt15/vocab.bpe.36000"
         self.embed_prefix = None
         self.sos = "<s>"
         self.eos = "</s>"
