@@ -19,7 +19,7 @@ import 'package:angular_components/material_button/material_button.dart';
   exports: [RoutePaths, Routes],
 )
 class TranslationAppComponent {
-  TranslateForm form = TranslateForm("In the 80s in the twentieth century, Ireland was one of the poorest countries in the European Union, along with Portugal.", "");
+  TranslateForm form = TranslateForm("In the 80s in the twentieth century, Ireland was one of the poorest countries in the European Union, along with Portugal.", "", "French");
 
   final ProjectSpecialService _projectService;
 
@@ -33,9 +33,11 @@ class TranslationAppComponent {
 class TranslateForm{
   String original_text;
   String transText;
-  TranslateForm(this.original_text, this.transText);
+  String langauge;
+  TranslateForm(this.original_text, this.transText, this.langauge);
   Map toJson() => {
         'original_text': original_text,
-        'transText': transText
+        'transText': transText,
+        'langauge' : langauge
       };
 }
