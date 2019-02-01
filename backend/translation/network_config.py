@@ -1,5 +1,17 @@
+import os
+
+
 class NetworkConfig:
-    def __init__(self, inference_input_file=None):
+    def __init__(self, inference_input_file=None, language='French'):
+        checkpointdir = 'checkpoint/translation/en_fr_attention'
+        if language.lower() == 'french':
+            checkpointdir = 'checkpoint/translation/en_fr_attention'
+        elif language.lower() == 'german':
+            checkpointdir = 'checkpoint/translation/en_de_attention'
+        elif language.lower() == 'italin':
+            checkpointdir = 'checkpoint/translation/en_it_attention'
+        if not os.path.exists(checkpointdir):
+            raise FileNotFoundError("File not found")
         # network
         self.num_units = 1024
         self.num_layers = 2
@@ -28,10 +40,10 @@ class NetworkConfig:
         # data
         self.src = "en"
         self.tgt = "fr"
-        self.train_prefix = ""#"nmt/wmt15/train.tok.clean.bpe.32000"
-        self.dev_prefix = ""#"nmt/wmt15/newstest2013.tok.bpe.32000"
-        self.test_prefix = ""#"nmt/wmt15/newstest2015.tok.bpe.32000"
-        self.out_dir = "checkpoint/translation/en_fr_attention"
+        self.train_prefix = ""  # "nmt/wmt15/train.tok.clean.bpe.32000"
+        self.dev_prefix = ""  # "nmt/wmt15/newstest2013.tok.bpe.32000"
+        self.test_prefix = ""  # "nmt/wmt15/newstest2015.tok.bpe.32000"
+        self.out_dir = checkpointdir
         # vocab
         self.vocab_prefix = "data/vocab.bpe.32000"
         self.embed_prefix = None

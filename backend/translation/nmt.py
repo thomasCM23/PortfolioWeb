@@ -265,13 +265,13 @@ class NeuralMachineTranslation:
                                "length_penalty_weight", "sampling_temperature",
                                "num_translations_per_input", "infer_mode"]
 
-    def start_inference_nmt(self, inference_text, unique_id):
+    def start_inference_nmt(self, inference_text, unique_id, language):
         inferenc_dir = 'inference/'
         input_dir = inferenc_dir + 'input/' + unique_id
         output_dir = inferenc_dir + 'output/' + unique_id
         with open(input_dir, 'w') as f:
             f.write(inference_text)
-        self.FLAGS = network_config.NetworkConfig(inference_input_file=unique_id)
+        self.FLAGS = network_config.NetworkConfig(inference_input_file=unique_id, language=language)
         self.main()
         with open(output_dir, 'r') as f:
             text = f.read()

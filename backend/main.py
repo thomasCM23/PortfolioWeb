@@ -14,6 +14,7 @@ parser.add_argument('original_text')
 parser.add_argument('word')
 parser.add_argument('length')
 parser.add_argument('temperature')
+parser.add_argument('langauge')
 
 class HelloWorld(Resource):
     def get(self):
@@ -41,8 +42,12 @@ class Translate(Resource):
         txt_to_translate = re.sub('\s{2,}', ' ', txt_to_translate)
         print(txt_to_translate)
         nmt = NeuralMachineTranslation()
-        translated_txt = nmt.start_inference_nmt(txt_to_translate, str(uuid.uuid4()) + '.txt')
-        translated_txt = re.sub(r'\s([.,!?();:"](?:\s|$))', r'\1', translated_txt)
+        try:
+            translated_txt = nmt.start_inference_nmt(txt_to_translate, str(uuid.uuid4()) + '.txt', args['langauge'])
+            translated_txt = re.sub(r'\s([.,!?();:"](?:\s|$))', r'\1', translated_txt)
+        except:
+            translated_txt = "The language " + args['langauge'] + " has not yet been implemented"
+
         return {'text': translated_txt.replace("&apos;", "'")}
 
 
@@ -58,4 +63,4 @@ def add_headers(response):
     return response
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
