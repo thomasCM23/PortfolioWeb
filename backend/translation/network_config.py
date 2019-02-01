@@ -73,7 +73,7 @@ class NetworkConfig:
         # misc
         self.num_gpus = 1
         self.log_device_placement = False
-        self.metrics = "blue"
+        self.metrics = "bleu"
         self.steps_per_external_eval = None
         self.scope = None
         self.hparams_path = None
@@ -107,9 +107,9 @@ class NetworkConfig:
         self.tgt_vocab_size = None
         self.src_vocab_file = None
         self.tgt_vocab_file = None
-        self.num_embeddings_partitions = None
-        self.num_enc_emb_partitions = None
-        self.num_dec_emb_partitions = None
+        self.num_embeddings_partitions = 0
+        self.num_enc_emb_partitions = 0
+        self.num_dec_emb_partitions = 0
         self.src_embed_file = None
         self.tgt_embed_file = None
         self.inference_indices = None
