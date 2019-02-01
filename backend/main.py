@@ -5,6 +5,7 @@ import uuid
 import re
 from text_generation.inference import TextGeneration
 from translation.nmt import NeuralMachineTranslation
+import os
 
 app = Flask(__name__)
 api = Api(app)
@@ -46,7 +47,7 @@ class Translate(Resource):
             translated_txt = nmt.start_inference_nmt(txt_to_translate, str(uuid.uuid4()) + '.txt', args['langauge'])
             translated_txt = re.sub(r'\s([.,!?();:"](?:\s|$))', r'\1', translated_txt)
         except Exception as e:
-            translated_txt = "The language " + args['langauge'] + " has not yet been implemented" + " ERROR: " + str(e) + "  = " + str(e.__cause__)
+            translated_txt = "The language " + args['langauge'] + " has not yet been implemented" + " ERROR: " + str(e) + "  = " + os.path.exists('checkpoint/translation/en_fr_attention') + '   *** ' + args['langauge']
 
         return {'text': translated_txt.replace("&apos;", "'")}
 
