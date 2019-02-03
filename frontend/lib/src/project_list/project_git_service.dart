@@ -6,7 +6,7 @@ import 'package:http/http.dart';
 import 'project.dart';
 
 class ProjectGitService {
-  static const _mainURL = 'http://localhost:5000'; // URL to web API
+  static const _mainURL = 'http://localhost:8000'; // URL to web API
   static const _gitSpecialURL = _mainURL + '/projects/git_projects';
 
   final Client _http;

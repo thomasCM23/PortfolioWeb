@@ -29,16 +29,16 @@
       "tech": "Python, Tensorflow"
     },
     {
-      "title": "Eng to Fre ML App (Future)",
+      "title": "Simple Translation App",
       "description": "Using deep recurrent neural network for machine transalation from engilish to french.",
       "url": "#/translationapp",
-      "imagePath": "flutter.png",
+      "imagePath": "translationapp.png",
       "tech": "Python, Tensorflow, Flutter"
     },
     {
       "title": "Quick Notes (Future)",
       "description": "Application to take photes of notes and render them into digital, searchable e-notebooks.",
-      "url": "#/quicknotes",
+      "url": "https://github.com/thomasCM23/QuickNotes",
       "imagePath": "flutter.png",
       "tech": "Python, Tensorflow, Flutter, Go"
     }
