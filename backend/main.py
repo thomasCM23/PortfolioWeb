@@ -5,7 +5,6 @@ import uuid
 import re
 from text_generation.inference import TextGeneration
 from translation.nmt import NeuralMachineTranslation
-import os
 
 app = Flask(__name__)
 api = Api(app)
@@ -50,6 +49,7 @@ class Translate(Resource):
             translated_txt = "The language " + args['langauge'] + " has not yet been implemented"
 
         return {'text': translated_txt.replace("&apos;", "'")}
+
 
 
 api.add_resource(HelloWorld, '/')

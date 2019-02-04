@@ -6,7 +6,7 @@ import 'package:http/http.dart';
 import 'project.dart';
 
 class ProjectGitService {
-  static const _mainURL = 'http://localhost:8000'; // URL to web API
+  static const _mainURL = 'https://portfolio-tcm-api.herokuapp.com'; // URL to web API
   static const _gitSpecialURL = _mainURL + '/projects/git_projects';
 
   final Client _http;
@@ -16,7 +16,6 @@ class ProjectGitService {
   Future<List<Project>> getAll() async {
     try {
       final response = await _http.get(_gitSpecialURL);
-      print(response.body);
       final heroes = (_extractData(response) as List)
           .map((json) => Project.fromJson(json))
           .toList();
@@ -29,7 +28,6 @@ class ProjectGitService {
   dynamic _extractData(Response resp) => json.decode(resp.body);
 
   Exception _handleError(dynamic e) {
-    print(e); // for demo purposes only
     return Exception('Server error; cause: $e');
   }
     

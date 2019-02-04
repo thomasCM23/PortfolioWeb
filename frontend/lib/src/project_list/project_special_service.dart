@@ -8,8 +8,8 @@ import 'projects/text_gen/text_gen_component.dart';
 import 'projects/translation_app/translation_app_component.dart';
 
 class ProjectSpecialService {
-  //static const _mainURL = 'http://ec2-54-81-187-56.compute-1.amazonaws.com'; // URL to web API
-  static const _mainURL = 'http://localhost:8000';
+  static const _mainURL = 'https://portfolio-tcm-api.herokuapp.com'; // URL to web API
+  //static const _mainURL = 'http://localhost:8000';
   static const _projectSpecialURL = _mainURL + '/projects/ml_projects';
   static const _generateURL = _mainURL + '/generate-text';
   static const _translateURL = _mainURL + '/translate-text';
@@ -33,7 +33,6 @@ class ProjectSpecialService {
   dynamic _extractData(Response resp) => json.decode(resp.body);
 
   Exception _handleError(dynamic e) {
-    print(e); // for demo purposes only
     return Exception('Server error; cause: $e');
   }
 
